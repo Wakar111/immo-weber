@@ -1,90 +1,118 @@
 import { Link } from 'react-router-dom';
-import { Home, ArrowLeft, Code, Zap, Package } from 'lucide-react';
+import { Calendar, CheckCircle, Users, Award, Phone } from 'lucide-react';
 
-export default function About() {
+const milestones = [
+  { year: '1982', text: 'Gründung des Unternehmens – Start als persönlicher Immobilienvermittler in Rödermark.' },
+  { year: '1990er', text: 'Spezialisierung auf Wohnimmobilien für private Anbieter und Erwerber in Hessen.' },
+  { year: '2000er', text: 'Aufbau eines starken Netzwerks mit IVD-Mitgliedschaft und Kooperationspartnern.' },
+  { year: '2008', text: 'IVD Qualitäts-Zertifikat erhalten – Bestätigung unserer hohen Beratungsstandards.' },
+  { year: '2013–2015', text: 'ImmoScout24 Award & FOCUS Top 1000 Immobilienmakler – bundesweite Anerkennung.' },
+  { year: 'Heute', text: 'Über 1.000 verkaufte Objekte. Persönlich, kompetent, ständig erreichbar.' },
+];
+
+export default function UeberUns() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <nav className="bg-white shadow-sm">
+    <div className="pt-20">
+      {/* Header */}
+      <section className="bg-primary-900 py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-gold-400 text-sm font-semibold uppercase tracking-wider mb-3">Manuela Weber Immobilien</p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Über uns</h1>
+          <p className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
+            Mit über 30 Jahren Erfahrung sind wir auf dem hessischen Immobilienmarkt zu Hause.
+          </p>
+        </div>
+      </section>
+
+      {/* Main content */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Home className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-xl font-semibold text-gray-900">MyApp</span>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-2xl font-bold text-slate-900 mb-6">Persönlich. Kompetent. Engagiert.</h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed">
+                <p>
+                  Unser Gründungsjahr war 1982. Das Angebot, besonders für private Anbieter und Erwerber tätig zu sein, entwickelte sich durch den steigenden Bedarf an professioneller Beratung und Betreuung bei der Vermarktung von Wohn- und Anlage-Immobilien.
+                </p>
+                <p>
+                  Wir führen <strong className="text-slate-800">keine Massenbesichtigungen</strong> durch, sondern präsentieren Ihr Objekt persönlich vor Ort. Denn jeder einzelne Kunde ist uns wichtig und soll sich bei uns wohl fühlen.
+                </p>
+                <p>
+                  Nach mittlerweile über 34 Jahren Immobilienberatung haben wir heute den guten Ruf, auch in schwierigen Situationen ein seriöser und zuverlässiger Partner zu sein. Wir verzichten auf Fachbegriffe und gehen sensibel auf Ihre Wünsche ein.
+                </p>
+                <p>
+                  Mit unserer engagierten, persönlichen und kompetenten Art, unserer ständigen Erreichbarkeit und der Erfahrung von mehr als <strong className="text-slate-800">1.000 verkauften Immobilien</strong>, werden wir Ihnen auch in Zukunft als adäquater Partner tatkräftig zur Seite stehen.
+                </p>
+              </div>
+
+              {/* Garantie */}
+              <div className="mt-8 p-6 bg-gradient-to-br from-gold-500/10 to-gold-500/5 border border-gold-500/20 rounded-2xl">
+                <div className="flex items-center gap-2 mb-2">
+                  <Award size={18} className="text-gold-600" />
+                  <span className="text-gold-700 font-bold text-sm uppercase tracking-wider">Unsere Garantie</span>
+                </div>
+                <p className="text-slate-800 font-semibold text-lg">
+                  Wir finden auch für SIE die bestmögliche Lösung.
+                </p>
+              </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <Link to="/" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Home
-              </Link>
-              <Link to="/about" className="text-blue-600 px-3 py-2 rounded-md text-sm font-medium">
-                About
-              </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                Contact
-              </Link>
+
+            {/* Key facts */}
+            <div className="space-y-4">
+              {[
+                { icon: Calendar, value: 'Seit 1982', label: 'Gründungsjahr – über 40 Jahre Marktpräsenz' },
+                { icon: CheckCircle, value: '1.000+', label: 'verkaufte Immobilien in Hessen' },
+                { icon: Users, value: 'Persönlich', label: 'Keine Massenbesichtigungen – jeder Kunde zählt' },
+                { icon: Award, value: 'IVD-Mitglied', label: 'Zertifiziertes Mitglied des Immobilienverbands' },
+                { icon: Phone, value: '10–22 Uhr', label: 'Täglich erreichbar, auch an Feiertagen' },
+              ].map(({ icon: Icon, value, label }) => (
+                <div key={value} className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                  <div className="w-10 h-10 rounded-lg bg-gold-500/10 flex items-center justify-center shrink-0">
+                    <Icon size={18} className="text-gold-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-slate-900">{value}</p>
+                    <p className="text-sm text-slate-500">{label}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </nav>
+      </section>
 
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8">
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Home
-        </Link>
-
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">About This Application</h1>
-
-        <div className="bg-white rounded-xl shadow-md p-8 mb-8">
-          <p className="text-lg text-gray-700 leading-relaxed mb-4">
-            This is a simple frontend application showcasing modern web development practices and technologies.
-            It demonstrates how to build a clean, responsive, and user-friendly interface using industry-standard tools.
-          </p>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            The application features a multi-page layout with smooth navigation, beautiful design elements,
-            and a focus on user experience.
-          </p>
-        </div>
-
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">Technology Stack</h2>
-
-        <div className="space-y-4">
-          <div className="bg-white rounded-lg shadow-md p-6 flex items-start">
-            <div className="bg-blue-100 w-10 h-10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-              <Code className="h-5 w-5 text-blue-600" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">React with TypeScript</h3>
-              <p className="text-gray-600">
-                A powerful combination for building type-safe, component-based user interfaces with excellent tooling support.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md p-6 flex items-start">
-            <div className="bg-green-100 w-10 h-10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-              <Zap className="h-5 w-5 text-green-600" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Vite</h3>
-              <p className="text-gray-600">
-                Lightning-fast build tool that provides instant hot module replacement and optimized production builds.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-md p-6 flex items-start">
-            <div className="bg-cyan-100 w-10 h-10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-              <Package className="h-5 w-5 text-cyan-600" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Tailwind CSS</h3>
-              <p className="text-gray-600">
-                Utility-first CSS framework that enables rapid UI development with a consistent design system.
-              </p>
+      {/* Timeline */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold text-slate-900 mb-10 text-center">Unsere Geschichte</h2>
+          <div className="relative">
+            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gold-500/20" />
+            <div className="space-y-8">
+              {milestones.map(({ year, text }) => (
+                <div key={year} className="relative pl-12">
+                  <div className="absolute left-0 w-8 h-8 rounded-full bg-gold-gradient flex items-center justify-center shadow-md">
+                    <div className="w-2 h-2 rounded-full bg-slate-900" />
+                  </div>
+                  <p className="text-gold-600 font-bold text-sm mb-1">{year}</p>
+                  <p className="text-slate-600 text-sm leading-relaxed">{text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* CTA */}
+      <section className="py-14 bg-primary-900 text-center">
+        <div className="max-w-2xl mx-auto px-4">
+          <h2 className="text-2xl font-bold text-white mb-3">Lernen Sie uns kennen</h2>
+          <p className="text-slate-400 mb-6">Wir freuen uns auf Ihren Anruf oder Ihre Nachricht.</p>
+          <Link to="/kontakt" className="inline-flex items-center gap-2 px-8 py-3 bg-gold-gradient text-slate-900 font-bold rounded-xl shadow-lg hover:scale-105 transition-all duration-200">
+            <Phone size={16} />
+            Jetzt Kontakt aufnehmen
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
