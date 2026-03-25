@@ -3,12 +3,12 @@ import { MapPin, Phone } from 'lucide-react';
 
 const regions = [
     { name: 'Rödermark · Rodgau · Dietzenbach', highlight: true },
-    { name: 'Heusenstamm · Dreieich · Gravenbruch', highlight: false },
-    { name: 'Neu-Isenburg · Langen', highlight: false },
+    { name: 'Heusenstamm · Dreieich · Gravenbruch', highlight: true },
+    { name: 'Neu-Isenburg · Langen', highlight: true },
     { name: 'Frankfurt – City, Sachsenhausen & Umland', highlight: true },
-    { name: 'Darmstadt & Dieburg', highlight: false },
-    { name: 'Region Odenwald', highlight: false },
-    { name: 'Seligenstadt · Hanau · Aschaffenburg (Bayern)', highlight: false },
+    { name: 'Darmstadt & Dieburg', highlight: true },
+    { name: 'Region Odenwald', highlight: true },
+    { name: 'Seligenstadt · Hanau · Aschaffenburg (Bayern)', highlight: true },
 ];
 
 export default function Arbeitsgebiet() {
@@ -48,8 +48,8 @@ export default function Arbeitsgebiet() {
                                     <div
                                         key={name}
                                         className={`flex items-center gap-3 p-4 rounded-xl border transition-all ${highlight
-                                                ? 'bg-gold-500/10 border-gold-500/30'
-                                                : 'bg-slate-50 border-slate-100'
+                                            ? 'bg-gold-500/10 border-gold-500/30'
+                                            : 'bg-slate-50 border-slate-100'
                                             }`}
                                     >
                                         <MapPin
