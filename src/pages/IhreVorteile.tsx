@@ -58,7 +58,7 @@ export default function IhreVorteile() {
             <section className="py-16 bg-primary-900">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-2xl font-bold text-white mb-2">Kontaktieren Sie uns</h2>
-                    <a href="tel:+496074922615" className="block text-4xl font-black text-gradient-gold my-4 hover:opacity-80 transition-opacity">
+                    <a href="tel:+496074922615" className="block text-2xl sm:text-4xl font-black text-gradient-gold my-4 hover:opacity-80 transition-opacity">
                         Tel. 06074 / 922 615
                     </a>
                     <p className="text-slate-400 mb-8">auch am Wochenende! Täglich 10:00–22:00 Uhr</p>

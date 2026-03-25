@@ -53,7 +53,7 @@ export default function Footer() {
                     {/* Navigation */}
                     <div>
                         <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Navigation</h3>
-                        <ul className="space-y-2 text-sm columns-2">
+                        <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
                             <li><Link to="/ueber-uns" className="hover:text-gold-400 transition-colors">Über uns</Link></li>
                             <li><Link to="/ihre-vorteile" className="hover:text-gold-400 transition-colors">Ihre Vorteile</Link></li>
                             <li><Link to="/leistungen" className="hover:text-gold-400 transition-colors">Leistungen</Link></li>

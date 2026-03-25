@@ -1,12 +1,16 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ScrollToTop from './ScrollToTop';
 
 export default function Layout() {
+    const { pathname } = useLocation();
+
     return (
         <div className="min-h-screen flex flex-col bg-slate-50">
+            <ScrollToTop />
             <Navbar />
-            <main className="flex-1">
+            <main key={pathname} className="flex-1 animate-page-in">
                 <Outlet />
             </main>
             <Footer />

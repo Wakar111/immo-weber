@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background -->
+  <rect width="32" height="32" rx="7" fill="url(#green)"/>
+  <!-- House icon (centered, dark) -->
+  <g fill="#0f172a" transform="translate(6, 6)">
+    <!-- Roof -->
+    <polygon points="10,2 19,9.5 1,9.5" fill="#0f172a"/>
+    <!-- Body -->
+    <rect x="3.5" y="9.5" width="13" height="8.5" rx="1" fill="#0f172a"/>
+    <!-- Door -->
+    <rect x="7.5" y="13" width="5" height="5" rx="0.8" fill="#10b981"/>
+  </g>
+</svg>
